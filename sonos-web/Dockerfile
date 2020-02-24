@@ -10,7 +10,7 @@ RUN \
     apk add nodejs npm \
     \
     && npm install -g sonos-web-cli \
-    && sonos-web install
+    && sonos-web install \
     \
     && rm -fr \
         /tmp/* \
