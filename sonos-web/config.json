@@ -12,6 +12,9 @@
   "host_network": true,
   "map": ["config:rw"],
   "privileged": ["NET_ADMIN"],
+  "ports": {
+    "5050/tcp": 5050
+  },
   "options": {
     "port": "80"
   },
