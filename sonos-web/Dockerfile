@@ -12,15 +12,10 @@ RUN \
         npm \
     \
     && npm config set unsafe-perm true \
-    \
-    && npm install \
-        --no-audit \
-        --no-optional \
-        --no-update-notifier \
-        --only=production \
-        --unsafe-perm \
-    \
+    \ 
     && npm install -g sonos-web-cli \
+    \
+    && sonos-web install
     \
     && npm cache clear --force \
     \
