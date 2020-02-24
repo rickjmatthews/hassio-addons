@@ -23,9 +23,6 @@ RUN \
         /tmp/* \
         /etc/nginx
 
-# Copy root filesystem
-COPY rootfs /
-
 # Build arguments
 ARG BUILD_DATE
 ARG BUILD_REF
