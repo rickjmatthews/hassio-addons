@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 RUN \
-    apt-get update \
+    apk add nodejs npm \
     \
     && npm install -g sonos-web-cli \
     && sonos-web install
@@ -19,10 +19,6 @@ RUN \
 
 # Copy root filesystem
 COPY rootfs /
-
-# Add airsonos binary
-ARG BUILD_ARCH=amd64
-COPY bin/airsonos-${BUILD_ARCH} /usr/bin/airsonos
 
 # Build arguments
 ARG BUILD_DATE
