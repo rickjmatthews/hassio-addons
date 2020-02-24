@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:7.0.2
+ARG BUILD_FROM=hassioaddons/ubuntu-base:5.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -7,7 +7,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 RUN \
-    apk add --no-cache \
+    apt-get update \
+    \
+    && apt-get -y --no-install-recommends \
         nodejs \
         npm \
     \
