@@ -17,6 +17,5 @@
   },
   "schema": {
     "port": "int(0,65535)?"
-  },
-  "image": "rickjmatthews/{arch}-hassio-addon-sonos-web"
+  }
 }
