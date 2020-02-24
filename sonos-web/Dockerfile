@@ -1,11 +1,9 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:5.0.1
+ARG BUILD_FROM=hassioaddons/base:7.0.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-
 
 # Setup base
 RUN \
@@ -22,9 +20,10 @@ RUN \
         --only=production \
         --unsafe-perm \
     \
+    && npm install -g sonos-web-cli \
+    \
     && npm cache clear --force \
     \
-    && npm install -g sonos-web-cli \
     && rm -fr \
         /tmp/* \
         /etc/nginx
