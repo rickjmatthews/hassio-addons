@@ -1,0 +1,18 @@
+{
+  "name": "sonos-web",
+  "version": "1.0",
+  "slug": "sonos-web",
+  "description": "Web based controller for Sonos",
+  "url": "https://github.com/rickjmatthews/hassio-addons/tree/master/sonos-web",
+  "startup": "once",  
+  "boot": "auto",
+  "host_network": "true",
+  "privileged": ["NET_ADMIN"],
+  "options": {
+    "port": "80",
+  },
+  "schema": {
+    "port": "int(0,65535)?"
+  },
+  "image": "rickjmatthews/{arch}-hassio-addon-sonos-web"
+}
