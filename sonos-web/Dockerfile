@@ -23,6 +23,8 @@ RUN \
         /tmp/* \
         /etc/nginx
 
+EXPOSE 5050
+
 # Build arguments
 ARG BUILD_DATE
 ARG BUILD_REF
