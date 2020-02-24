@@ -9,9 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apt-get update \
     \
-    && apt-get -y --no-install-recommends \
-        nodejs \
-        npm \
+    && apt-get -y --no-install-recommends nodejs npm \
     \
     && npm config set unsafe-perm true \
     \ 
