@@ -5,15 +5,29 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Setup base system
-RUN apk add nodejs npm
-RUN npm install --production
-RUN npm install -g sonos-web-cli
-RUN sonos-web install
-RUN rm -fr \
+
+
+# Setup base
+RUN \
+    apk add --no-cache \
+        nodejs \
+        npm \
+    \
+    && npm config set unsafe-perm true \
+    \
+    && npm install \
+        --no-audit \
+        --no-optional \
+        --no-update-notifier \
+        --only=production \
+        --unsafe-perm \
+    \
+    && npm cache clear --force \
+    \
+    && npm install -g sonos-web-cli \
+    && rm -fr \
         /tmp/* \
-        /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+        /etc/nginx
 
 # Copy root filesystem
 COPY rootfs /
