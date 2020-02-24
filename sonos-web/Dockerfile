@@ -6,13 +6,11 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
-RUN \
-    apk add nodejs npm \
-    \
-    && npm install -g sonos-web-cli \
-    && sonos-web install \
-    \
-    && rm -fr \
+RUN apk add nodejs npm
+RUN npm install --production
+RUN npm install -g sonos-web-cli
+RUN sonos-web install
+RUN rm -fr \
         /tmp/* \
         /var/{cache,log}/* \
         /var/lib/apt/lists/*
