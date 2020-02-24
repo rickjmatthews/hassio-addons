@@ -15,7 +15,7 @@ RUN \
     \ 
     && npm install -g sonos-web-cli \
     \
-    && sonos-web install
+    && sonos-web install \
     \
     && npm cache clear --force \
     \
