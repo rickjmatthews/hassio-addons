@@ -14,5 +14,7 @@
   "privileged": ["NET_ADMIN"],
   "ports": {
     "5050/tcp": 5050
-  }
+  },
+  "options": {},
+  "schema": {}
 }
